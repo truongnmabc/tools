@@ -50,7 +50,7 @@ jobs:
             NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}
 
       - name: Deploy to CapRover
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+     
         uses: caprover/deploy-from-github@v1.1.2
         with:
           server: "${{ secrets.CAPROVER_SERVER }}"
