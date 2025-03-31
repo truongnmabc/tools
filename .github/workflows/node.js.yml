@@ -12,6 +12,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: dev
     permissions:
       contents: read
       packages: write
@@ -52,7 +53,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GH_TOKEN }}
 
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
@@ -71,6 +72,6 @@ jobs:
         uses: caprover/deploy-from-github@v1.1.2
         with:
           server: "${{ secrets.CAPROVER_SERVER }}"
-          app: "${{ secrets.CAPROVER_APP_NAME_ASVAB }}"
+          app: "${{ secrets.CAPROVER_APP_NAME }}"
           token: "${{ secrets.CAPROVER_API_TOKEN }}"
           image: ${{ env.IMAGE_URL }}
