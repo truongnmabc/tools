@@ -2,8 +2,8 @@ import React from "react";
 
 const Icon: React.FC = () => {
   return (
-    <div>
-      <h1>Icon Page</h1>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-2xl font-bold">Icon Page</h1>
     </div>
   );
 };
