@@ -1,5 +1,13 @@
-import HomePage from "@/layout";
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return <HomePage />;
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/sitemap?type=post");
+  }, [router]);
+
+  return null;
 }
