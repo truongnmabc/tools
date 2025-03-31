@@ -4,6 +4,7 @@ const Icon: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <h1 className="text-2xl font-bold">Icon Page</h1>
+      <h2></h2>
     </div>
   );
 };
