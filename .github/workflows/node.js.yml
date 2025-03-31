@@ -33,6 +33,12 @@ jobs:
         with:
           version: 8
           run_install: false
+      - name: Create pnpm-lock.yaml if not exists
+        run: |
+          if [ ! -f "pnpm-lock.yaml" ]; then
+            echo "No pnpm-lock.yaml found, creating one..."
+            pnpm install --no-frozen-lockfile
+          fi
 
       - name: Get pnpm store directory
         id: pnpm-cache
