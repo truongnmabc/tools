@@ -20,8 +20,8 @@ export async function POST(request: Request) {
       urls.map(async (url) => {
         try {
           const response = await axios.head(url, {
-            validateStatus: () => true, // Chấp nhận mọi status code
-            timeout: 5000, // Timeout sau 5 giây
+            validateStatus: () => true,
+            timeout: 5000,
           });
 
           return {
